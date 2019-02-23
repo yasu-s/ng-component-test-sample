@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   /** Name */
   name = '';
 
-  /** テキスト */
+  /** Text */
   text = '';
 
   /**
