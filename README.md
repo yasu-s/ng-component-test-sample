@@ -1,2 +1,4 @@
-# ng-component-test-sample
-Angular Component Test Sample
+# 概要
+
+Angularのコンポーネントのユニットテストのサンプルです。
+
