@@ -1,29 +1,39 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 
-describe('AppComponent', () => {
+import { AppComponent } from './app.component';
+import { AppService } from './app.service';
+
+describe('AppComponent - DOM Test', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let appService: AppService;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      providers: [
+        AppService
+      ]
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    appService = TestBed.get(AppService);
+  });
+
+  it('should create', () => {
+    expect(component).toBeDefined();
   });
 
   it(`should have as title 'ng-sample'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ng-sample');
+    expect(component.title).toEqual('ng-sample');
   });
 
   it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to ng-sample!');
