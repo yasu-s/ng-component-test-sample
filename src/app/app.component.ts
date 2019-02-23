@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { AppService } from './app.service';
 
@@ -7,18 +7,28 @@ import { AppService } from './app.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   /** Title */
   title = 'ng-sample';
 
   /** Name */
   name = '';
 
+  /** テキスト */
+  text = '';
+
   /**
    * AppComponent create
    * @param appService AppService
    */
   constructor(private appService: AppService) {}
+
+  /**
+   * OnInit
+   */
+  ngOnInit(): void {
+    this.text = 'aaa';
+  }
 
   /**
    * Button Click

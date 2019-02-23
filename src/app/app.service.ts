@@ -18,7 +18,7 @@ export interface JsonData {
  * サービスクラス
  */
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class AppService {
 

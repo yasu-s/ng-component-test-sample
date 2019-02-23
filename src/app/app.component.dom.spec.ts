@@ -1,4 +1,5 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -13,8 +14,11 @@ describe('AppComponent - DOM Test', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        FormsModule
+      ],
       providers: [
-        AppService
+        { provide: AppService, useValue: {} }
       ]
     }).compileComponents();
   }));
