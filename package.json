@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "yarn && ng serve",
     "build": "ng build",
     "test": "ng test --browsers ChromeDebug",
     "test:headless": "ng test --code-coverage --browsers ChromeHeadless --watch false",
