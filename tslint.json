@@ -41,6 +41,7 @@
       "trace"
     ],
     "no-empty": false,
+    "no-namespace": false,
     "no-inferrable-types": [
       true,
       "ignore-params"

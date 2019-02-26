@@ -1,41 +1,41 @@
-# Overview
+# 概要
 
 Angularのコンポーネントのユニットテストのサンプルです。  
 クラスベースのテストとDOMテストの2パターンのテストコードを配置しています。
 
-# System requirements
+# 実行環境
 
 * Node.js - 10.x
 * Yarn - 1.12.x
 
-# Used library
+# 使用ライブラリ
 
 * Angular - 7.2.x
 
-# Operation check
+# 動作確認
 
-## 1. Download Sample
+## 1. サンプルのダウンロード
 
 ```
 git clone git@github.com:yasu-s/ng-component-test-sample.git
 ```
 
-## 2. Installing packages  
+## 2. パッケージインストール  
 
 ```
 cd ng-component-test-sample
 yarn
 ```
 
-## 3. Launch sample application  
+## 3. サンプルの起動  
 
 ```
 yarn test
 ```
 
-# Sample source  
+# サンプルソース  
 
-## Class Test - app.component.class.spec.ts
+## クラステスト - app.component.class.spec.ts
 
 ```typescript
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
@@ -49,6 +49,7 @@ describe('AppComponent - Class Test', () => {
   let appService: AppService;
 
   beforeEach(() => {
+    // providers に AppComponent を設定
     TestBed.configureTestingModule({
       providers: [
         AppComponent,
@@ -90,7 +91,7 @@ describe('AppComponent - Class Test', () => {
 });
 ```
 
-## DOM Test - app.component.dom.spec.ts
+## DOMテスト - app.component.dom.spec.ts
 
 ```typescript
 import { TestBed, async, ComponentFixture, fakeAsync, tick } from '@angular/core/testing';
@@ -106,6 +107,7 @@ describe('AppComponent - DOM Test', () => {
   let appService: AppService;
 
   beforeEach(async(() => {
+    // compileComponents 後、ComponentFixture 経由で AppComponent を取得
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
